@@ -47,14 +47,14 @@ public class DemoController {
 		return ResponseEntity.ok().build();
 	}
 
-	// Create a new Note
+	// Create
 	@RequestMapping(value = "/createMoveMedicalProduct", method = RequestMethod.POST)
 	@ResponseBody
 	public MoveMedicalProduct createProduct(@Valid @RequestBody MoveMedicalProduct product) {
 		return moveMedicalProductRepository.save(product);
 	}
 
-	// Delete a Note
+	// delete given node and children
 	@RequestMapping(value = "/deletenodeandchildren/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<?> deleteNodeAndChildren(@PathVariable(value = "id") Long id) {
